@@ -4,7 +4,7 @@ export const Styles = {
 
     GradientDiv : styled.div`
     width: 100%;
-    height: 583px;
+    height: 653px;
     background-color:  #0D0D0D;
 `,
 
@@ -12,7 +12,8 @@ export const Styles = {
     display: flex;
     width: 27rem;
     padding-left: 2rem;
-    padding-top: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
     `,
     
     Text : styled.p`
@@ -33,7 +34,6 @@ export const Styles = {
     background-color: #080808;
     width: 70vw;
     height: 16rem;
-    margin-top: 5.5rem;
     margin-inline: 13.5rem;
     `,
 
@@ -64,6 +64,7 @@ export const Styles = {
     height: 3rem;
     border-radius: 32px;
     font-family: 'Work Sans';
+    z-index: 3;
 
     :hover {
         cursor: pointer;

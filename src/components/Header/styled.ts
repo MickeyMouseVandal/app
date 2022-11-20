@@ -15,7 +15,7 @@ export const Styles = {
     IconsDiv : styled.div`
     display: flex;
     gap: 1rem;
-    padding-right: 1.75rem;
+    padding-right: 3rem;
     `,
 
     logoVandal : styled.a`
