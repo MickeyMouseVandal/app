@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -42,4 +44,18 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+body ::-webkit-scrollbar {
+	background: black;
+	width: 1rem;
+}
+
+body ::-webkit-scrollbar-thumb {
+	border: 8px;
+	background-color: #FFB03A;
 }
