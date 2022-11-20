@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const header = styled.div`
   display: flex;
@@ -67,17 +67,96 @@ export const WrapperSignIn = styled.div`
   height: max-content;
   justify-content: center;
   align-items: center;
+  gap: 5rem;
 `
 
 export const WrapperLogin = styled.div`
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100%;
   height: max-content;
+  justify-content: center;
+  gap: .8rem;
 `
 
 export const Title = styled.h1`
   font-size: 4rem;
   font-weight: bold;
   color: #252525;
+`
+
+export const Description = styled.p`
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #667085;
+`
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2rem;
+`
+
+export const FormGroupItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  gap: .8rem;
+`
+
+export const Input = styled.input`
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  border: 1px solid #D0D5DD;
+  color: #344054;
+`
+
+export const InputPassword = styled.input.attrs(props => ({
+  type: "password",
+}))`
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  border: 1px solid #D0D5DD;
+  color: #344054;
+`
+
+export const Label = styled.label`
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #344054;
+`
+
+export const ButtonConfirm = styled.button`
+  height: 4.4rem;
+  width: 36rem;
+  color: white;
+  background-color: #FFB03A;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: all .4s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`
+
+export const DontHaveAccount = styled.p`
+  display: flex;
+  justify-content: center;
+  color: #344054;
+  font-size: 1.5rem;
+  gap: 0.5rem;
+`
+
+export const SignUp = styled.a`
+  color: #5429FF;
+  font-size: 1.5rem;
+  font-weight: bold;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
 `

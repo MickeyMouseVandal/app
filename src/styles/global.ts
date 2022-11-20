@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
   outline: none;
   border: none;
+  font-family: 'Work Sans', sans-serif;
 }
 
 html {
