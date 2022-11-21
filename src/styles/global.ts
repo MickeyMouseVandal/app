@@ -14,6 +14,10 @@ html {
   font-size: 62.5%;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   overflow-x: hidden;
   scroll-behavior: auto;

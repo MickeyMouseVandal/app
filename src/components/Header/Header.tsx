@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Styles as S } from "./styled";
 
 interface IHeader {
@@ -7,14 +8,19 @@ interface IHeader {
 
 
 export default function Header(props: IHeader){
-
     return (
         <>
         <S.Header>
-            {props.white ? <S.logoVandalWhite href="/"/> :  <S.logoVandal href="/"/>}
+            <Link to="/">
+                {props.white ? <S.logoVandalWhite /> :  <S.logoVandal />}
+            </Link>
             <S.IconsDiv>
-                {props.white ? <S.cartIconWhite href={props.url}/> : <S.cartIcon href={props.url}/>}
-                {props.white ? <S.profileIconWhite href="/cadastrar"/> : <S.profileIcon href="/cadastrar"/>}
+                <Link to={props.url}>
+                    {props.white ? <S.cartIconWhite /> : <S.cartIcon />}
+                </Link>
+                <Link to={props.url}>
+                    {props.white ? <S.profileIconWhite /> : <S.profileIcon />}
+                </Link>
             </S.IconsDiv>
         </S.Header>
         </>

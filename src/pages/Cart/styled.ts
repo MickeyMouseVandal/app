@@ -36,13 +36,13 @@ export const Styles = {
     padding-top: 5rem;
     margin-bottom: 5rem;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
     width: 40rem;
     border-right: 1px solid black;
     `,
 
     ItemDiv : styled.div`
-    height: 60px;
+    height: max-content;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -78,7 +78,7 @@ export const Styles = {
     width: 100vw;
     `,
 
-    PayButton : styled.a`
+    PayButton : styled.span`
     width: 200px;
     height: 40px;
     text-decoration: none;

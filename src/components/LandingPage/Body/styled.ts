@@ -64,14 +64,17 @@ export const Styles = {
     color: #252525;
     `,
 
-    ItemImg : styled.img`
+    ItemImg : styled.div<{ src: string }>`
+    background-image: ${props => `url(${props.src})`};
+    background-size: contain;
+    background-position: center;
     width: 300px;
     height: 250px;
     border-radius: 10px 10px 0px 0px;
     border-bottom: 0.1px solid black;
     `,
 
-    ItemLink : styled.a`
+    ItemLink : styled.div`
     background-color: transparent;
     text-align: center;
     color: transparent;
