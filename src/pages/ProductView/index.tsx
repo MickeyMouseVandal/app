@@ -61,7 +61,7 @@ export default function ProductView(){
     return (
         <>
         <S.Wrapper>
-            <Header/>
+            <Header url={"/carrinho/" + id}/>
             <Body 
             name={item.name} 
             description={item.description} 

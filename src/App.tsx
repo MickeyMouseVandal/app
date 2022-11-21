@@ -9,6 +9,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Cart from './pages/Cart'   
 import { useAppContext } from './context/hook'
 import { ICart } from './pages/Cart'
+import ShopDone from './pages/ShoppingDone'
 
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
       <Routes>
           <Route path='/*' element={<LandingPage/>}/>
           <Route path='/ver-produto/:id' element={<ProductView/>}/>
-          <Route path='/carrinho' element={<Cart/>}/>
+          <Route path='/carrinho/:id' element={<Cart/>}/>
+          <Route path='/compra-feita' element={<ShopDone/>}/>
       </Routes>
     </Router>
     </ChakraProvider>
