@@ -30,9 +30,7 @@ export default function SignUp() {
       confirmPassword: account.confirmPassword,
     })
     .then(response => {
-      if(response.status === 201) {
         return navigate('/signIn');
-      }
     })
   }
 

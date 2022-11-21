@@ -4,13 +4,13 @@ export const Styles = {
 
     GradientDiv : styled.div`
     width: 100%;
-    height: 653px;
+    height: 753px;
     background-color:  #0D0D0D;
 `,
 
     TextDiv : styled.div`
     display: flex;
-    width: 27rem;
+    width: 37rem;
     padding-left: 2rem;
     padding-top: 2rem;
     padding-bottom: 3rem;
@@ -20,7 +20,7 @@ export const Styles = {
     font-family: 'Work Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 56px;
+    font-size: 46px;
     color: white;
     `,
 
@@ -31,10 +31,20 @@ export const Styles = {
     align-items: center;
     gap: 2rem;
     z-index: 3;
+    position: absolute;
     background-color: #080808;
     width: 70vw;
-    height: 16rem;
+    height: 22rem;
     margin-inline: 13.5rem;
+    padding: 4rem;
+    border-radius: 10px;
+    `,
+
+    Aligner : styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-bottom: 5rem;
     `,
 
     TextMoreDiv : styled.p`

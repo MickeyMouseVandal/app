@@ -51,7 +51,7 @@ export const Styles = {
     height: 10rem;
     `,
 
-    AddToCartButton : styled.button`
+    AddToCartButton : styled.a`
     padding: 8px 24px;
     width: 257px;
     height: 39px;

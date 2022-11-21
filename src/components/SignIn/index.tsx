@@ -25,17 +25,8 @@ export default function SignIn() {
       password: account.password,
     })
     .then(response => {
-
-      if(response.data.code === 200){
         return navigate('/')
-      } else {
-       alert("Email ou senha incorretos")
-      }
-
     })
-    .catch(function (error: Error) {
-      alert('email ou senha incorretos')
-    });
   }
 
   return(

@@ -18,7 +18,7 @@ export const Styles = {
     padding-right: 3rem;
     `,
 
-    logoVandal : styled.a`
+    logoVandal : styled.div`
     background-image: url('../src/assets/img/logopw-vandal-tipografica.png');
     background-size: cover;
     background-position: center;
@@ -26,7 +26,7 @@ export const Styles = {
     height: 100px;
     `,
 
-     logoVandalWhite : styled.a`
+     logoVandalWhite : styled.div`
      background-image: url('../src/assets/img/logopw-vandal-black-tipografica.png');
      background-size: cover;
      background-position: center;
@@ -36,7 +36,7 @@ export const Styles = {
 
 
 
-    cartIcon : styled.a`
+    cartIcon : styled.div`
     background-image: url('../src/assets/img/cart.svg');
     background-size: cover;
     background-position: center;
@@ -44,7 +44,7 @@ export const Styles = {
     height: 40px;
     `,
 
-    cartIconWhite : styled.a`
+    cartIconWhite : styled.div`
     background-image: url('../src/assets/img/icon-cart-white.png');
     background-size: cover;
     background-position: center;
@@ -52,7 +52,7 @@ export const Styles = {
     height: 40px;
     `,
 
-    profileIcon : styled.a`
+    profileIcon : styled.div`
     background-image: url('../src/assets/img/profile.svg');
     background-size: cover;
     background-position: center;
@@ -60,7 +60,7 @@ export const Styles = {
     height: 40px;
     `,
 
-    profileIconWhite : styled.a`
+    profileIconWhite : styled.div`
     background-image: url('../src/assets/img/profile-white.png');
     background-size: cover;
     background-position: center;

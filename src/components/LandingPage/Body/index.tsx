@@ -1,82 +1,50 @@
+import { useContext } from "react"
+import { Link } from "react-router-dom"
+import { formatPrice } from "../../../utils/format"
+import { StoreContext } from "../../context/store"
 import { Styles as S } from "./styled"
-import { Carousel } from 'react-responsive-carousel';
-
 
 export default function LandingPageBody(){
-
-    const URLs = {
-        mickey: "../src/assets/img/mickey-ring.jpg",
-        heart: "../src/assets/img/heart-ring.jpg",
-        flower: "../src/assets/img/flower-ring.jpg"
-    }
+    const { items } = useContext(StoreContext)
 
     return (
         <>
         <S.Section>
             <S.SectionTitle id="items">Novos produtos</S.SectionTitle>
             <S.CardsDiv>
-            <S.ItemLink href="/ver-produto/1">
-                <S.ItemCard>         
-                    <S.ItemImg src="../src/assets/img/mickey-ring.jpg"/>
-                    <S.CardDescriptionDiv>
-                        <S.CardDescriptionText>Mickey Ring</S.CardDescriptionText>
-                        <S.CardDescriptionText>R$13.000,00</S.CardDescriptionText>
-                    </S.CardDescriptionDiv> 
-                </S.ItemCard>
-            </S.ItemLink>
-            <S.ItemLink href="/ver-produto/2">
-            <S.ItemCard>
-                    <S.ItemImg src="../src/assets/img/heart-ring.jpg"/>
-                    <S.CardDescriptionDiv>
-                        <S.CardDescriptionText>Heart Ring</S.CardDescriptionText>
-                        <S.CardDescriptionText>R$10.000,00</S.CardDescriptionText>
-                    </S.CardDescriptionDiv>
-                </S.ItemCard>
-            </S.ItemLink>
-            <S.ItemLink href="/ver-produto/3">
-            <S.ItemCard>
-                    <S.ItemImg src="../src/assets/img/flower-ring.jpg"/>
-                    <S.CardDescriptionDiv>
-                        <S.CardDescriptionText>Flower Ring</S.CardDescriptionText>
-                        <S.CardDescriptionText>R$16.000,00</S.CardDescriptionText>
-                    </S.CardDescriptionDiv>
-                </S.ItemCard>
-            </S.ItemLink>  
+                {items.map(item => (
+                    <Link to={`/products/${item.id}`}>
+                        <S.ItemLink key={item.id}>
+                            <S.ItemCard>         
+                                <S.ItemImg src={item.thumb} />
+                                <S.CardDescriptionDiv>
+                                    <S.CardDescriptionText>{item.name}</S.CardDescriptionText>
+                                    <S.CardDescriptionText>{formatPrice(item.price)}</S.CardDescriptionText>
+                                </S.CardDescriptionDiv> 
+                            </S.ItemCard>
+                        </S.ItemLink> 
+                    </Link>
+                ))}
             </S.CardsDiv>
         </S.Section>
         <S.SectionBottom>
         <S.SectionTitle id="trending">Em alta</S.SectionTitle>
-            <S.CardsDiv>
-            <S.ItemLink href="/ver-produto/1">
-                <S.ItemCard>         
-                    <S.ItemImg src="../src/assets/img/mickey-ring.jpg"/>
-                    <S.CardDescriptionDiv>
-                        <S.CardDescriptionText>Mickey Ring</S.CardDescriptionText>
-                        <S.CardDescriptionText>R$13.000,00</S.CardDescriptionText>
-                    </S.CardDescriptionDiv> 
-                </S.ItemCard>
-            </S.ItemLink>
-            <S.ItemLink href="/ver-produto/2">
-            <S.ItemCard>
-                    <S.ItemImg src="../src/assets/img/heart-ring.jpg"/>
-                    <S.CardDescriptionDiv>
-                        <S.CardDescriptionText>Heart Ring</S.CardDescriptionText>
-                        <S.CardDescriptionText>R$10.000,00</S.CardDescriptionText>
-                    </S.CardDescriptionDiv>
-                </S.ItemCard>
-            </S.ItemLink>
-            <S.ItemLink href="/ver-produto/3">
-            <S.ItemCard>
-                    <S.ItemImg src="../src/assets/img/flower-ring.jpg"/>
-                    <S.CardDescriptionDiv>
-                        <S.CardDescriptionText>Flower Ring</S.CardDescriptionText>
-                        <S.CardDescriptionText>R$16.000,00</S.CardDescriptionText>
-                    </S.CardDescriptionDiv>
-                </S.ItemCard>
-            </S.ItemLink>  
+        <S.CardsDiv>
+        {items.map(item => (
+                    <Link to={`/products/${item.id}`}>
+                        <S.ItemLink key={item.id}>
+                            <S.ItemCard>         
+                                <S.ItemImg src={item.thumb} />
+                                <S.CardDescriptionDiv>
+                                    <S.CardDescriptionText>{item.name}</S.CardDescriptionText>
+                                    <S.CardDescriptionText>{formatPrice(item.price)}</S.CardDescriptionText>
+                                </S.CardDescriptionDiv> 
+                            </S.ItemCard>
+                        </S.ItemLink> 
+                    </Link>
+                ))}
             </S.CardsDiv>
         </S.SectionBottom>
-        
         </>
     )
 }
