@@ -43,8 +43,8 @@ export default function SignUp() {
         <S.header>
           <S.logo />
           <S.WrapperButtons>
-            <S.ButtonCart />
-            <S.ButtonPerson />
+            <S.ButtonCart onClick={() => alert('É necessário fazer Login antes de acessar o carrinho de compras!')} />
+            <S.ButtonPerson onClick={() => alert('É necessário fazer o Login antes de acessar o perfil!')} />
           </S.WrapperButtons>
         </S.header>
 
