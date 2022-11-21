@@ -10,6 +10,8 @@ import Cart from './pages/Cart'
 import { useAppContext } from './context/hook'
 import { ICart } from './pages/Cart'
 import ShopDone from './pages/ShoppingDone'
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp"
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
     <ChakraProvider>
     <Router>
       <Routes>
+          <Route path="/signIn" element={<SignIn />}/>
+          <Route path="/signUp" element={<SignUp />}/>
           <Route path='/*' element={<LandingPage/>}/>
           <Route path='/ver-produto/:id' element={<ProductView/>}/>
           <Route path='/carrinho/:id' element={<Cart/>}/>
