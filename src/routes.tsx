@@ -1,9 +1,19 @@
-import SignIn from "./components/SignIn";
+import {
+  BrowserRouter as Router, 
+  Routes, 
+  Route
+} from 'react-router-dom'
 
-export default function Routes() {
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+
+export default function RoutesApp() {
   return (
-    <>
-      <SignIn />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/signIn" element={<SignIn />}/>
+        <Route path="/signUp" element={<SignUp />}/>
+      </Routes>
+    </Router>
   )
 }

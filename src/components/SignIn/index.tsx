@@ -1,16 +1,42 @@
-import { useState } from 'react'
-
 import * as S from './styled';
+
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 import Section from '../Section';
 import Footer from '../Footer';
 
 export default function SignIn() {
-  const [ activeInput, setActiveInput ] = useState<string>('');
-  const [ activeInputPassword, setActiveInputPassword ] = useState<string>('');
+  const navigate = useNavigate();
+  const [account, setAccount] = useState(
+    {
+      email: "",
+      password: "",
+    }
+  )
 
-  const value = activeInput !== '' ? true : false;
-  const valuePassword = activeInputPassword !== '' ? true : false;
+  const sendData = function(e : React.MouseEvent<HTMLButtonElement, MouseEvent>){
+
+    e.preventDefault()
+
+    axios.post('/sign-in', {
+      email: account.email,
+      password: account.password,
+    })
+    .then(response => {
+
+      if(response.data.code === 200){
+        return navigate('/')
+      } else {
+       alert("Email ou senha incorretos")
+      }
+
+    })
+    .catch(function (error: Error) {
+      alert('email ou senha incorretos')
+    });
+  }
 
   return(
     <>
@@ -36,17 +62,17 @@ export default function SignIn() {
           <S.Form>
             <S.FormGroupItems>
               <S.Label>E-mail</S.Label>
-              <S.Input placeholder='debra.holt@example.com'/>
+              <S.Input value={account.email} placeholder='debra.holt@example.com' onChange={e => setAccount({ ...account, email: e.target.value })} />
             </S.FormGroupItems>
             <S.FormGroupItems>
               <S.Label>Senha</S.Label>
-              <S.InputPassword placeholder='••••••••' />
+              <S.InputPassword value={account.password} placeholder='••••••••' onChange={e => setAccount({ ...account, password: e.target.value })} />
             </S.FormGroupItems>
-            <S.ButtonConfirm>Confirmar</S.ButtonConfirm>
+            <S.ButtonConfirm onClick={e => sendData(e)} >Confirmar</S.ButtonConfirm>
             <S.DontHaveAccount>
               Não tem uma conta?
-              <S.SignUp href="#">
-                Faça login
+              <S.SignUp href="/signUp">
+                Cadastre-se
               </S.SignUp>
             </S.DontHaveAccount>
           </S.Form>
