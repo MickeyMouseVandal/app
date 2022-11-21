@@ -15,7 +15,7 @@ export default function LandingPageBody(){
         <S.Section>
             <S.SectionTitle id="items">Novos produtos</S.SectionTitle>
             <S.CardsDiv>
-            <S.ItemLink>
+            <S.ItemLink href="/ver-produto/1">
                 <S.ItemCard>         
                     <S.ItemImg src="../src/assets/img/mickey-ring.jpg"/>
                     <S.CardDescriptionDiv>
@@ -24,7 +24,7 @@ export default function LandingPageBody(){
                     </S.CardDescriptionDiv> 
                 </S.ItemCard>
             </S.ItemLink>
-            <S.ItemLink>
+            <S.ItemLink href="/ver-produto/2">
             <S.ItemCard>
                     <S.ItemImg src="../src/assets/img/heart-ring.jpg"/>
                     <S.CardDescriptionDiv>
@@ -33,7 +33,7 @@ export default function LandingPageBody(){
                     </S.CardDescriptionDiv>
                 </S.ItemCard>
             </S.ItemLink>
-            <S.ItemLink>
+            <S.ItemLink href="/ver-produto/3">
             <S.ItemCard>
                     <S.ItemImg src="../src/assets/img/flower-ring.jpg"/>
                     <S.CardDescriptionDiv>
@@ -47,7 +47,7 @@ export default function LandingPageBody(){
         <S.SectionBottom>
         <S.SectionTitle id="trending">Em alta</S.SectionTitle>
             <S.CardsDiv>
-            <S.ItemLink>
+            <S.ItemLink href="/ver-produto/1">
                 <S.ItemCard>         
                     <S.ItemImg src="../src/assets/img/mickey-ring.jpg"/>
                     <S.CardDescriptionDiv>
@@ -56,7 +56,7 @@ export default function LandingPageBody(){
                     </S.CardDescriptionDiv> 
                 </S.ItemCard>
             </S.ItemLink>
-            <S.ItemLink>
+            <S.ItemLink href="/ver-produto/2">
             <S.ItemCard>
                     <S.ItemImg src="../src/assets/img/heart-ring.jpg"/>
                     <S.CardDescriptionDiv>
@@ -65,7 +65,7 @@ export default function LandingPageBody(){
                     </S.CardDescriptionDiv>
                 </S.ItemCard>
             </S.ItemLink>
-            <S.ItemLink>
+            <S.ItemLink href="/ver-produto/3">
             <S.ItemCard>
                     <S.ItemImg src="../src/assets/img/flower-ring.jpg"/>
                     <S.CardDescriptionDiv>
