@@ -1,4 +1,4 @@
-import Footer from "../../components/Footer/Footer"
+import Footer from "../../components/Footer";
 import Header from "../../components/Header/Header"
 import { Styles as S} from './styled'
 import { useContext } from "react"
@@ -27,9 +27,9 @@ export default function Cart(){
           
         </S.ItemsDiv>
         <S.PaymentDiv>
-        <Link to="/cart/done">
-        <S.PayButton>Pagar</S.PayButton>
-        </Link>
+            <Link to="/cart/done">
+                <S.PayButton>Pagar</S.PayButton>
+            </Link>
         </S.PaymentDiv>
         </S.Container>
         <Footer/>

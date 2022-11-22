@@ -1,4 +1,4 @@
-import Footer from "../../components/Footer/Footer"
+import Footer from "../../components/Footer"
 import Header from "../../components/Header/Header"
 import { Styles as S} from "../ProductView/styled"
 import styled from "styled-components"

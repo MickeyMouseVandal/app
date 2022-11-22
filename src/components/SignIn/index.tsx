@@ -2,6 +2,7 @@ import * as S from './styled';
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import * as Dialog from '@radix-ui/react-dialog';
 import axios from 'axios';
 
 import Section from '../Section';
@@ -36,8 +37,43 @@ export default function SignIn() {
         <S.header>
           <S.logo />
           <S.WrapperButtons>
-            <S.ButtonCart onClick={() => alert('É necessário fazer Login antes de acessar o carrinho de compras!')}/>
-            <S.ButtonPerson onClick={() => alert('É necessário fazer o Login antes de acessar o perfil!')} />
+            
+              <Dialog.Root>
+                <S.Trigger>
+                  <S.ButtonCart />
+                </S.Trigger>
+                <Dialog.Portal>
+                  <S.bgModal />
+                    <S.Modal>
+                      <S.TitleModal>Acesso Negado!</S.TitleModal>
+                      <S.DescriptionModal>
+                        É necessário fazer o Login antes de acessar seu carrinho de compras.
+                      </S.DescriptionModal>
+                      <Dialog.Close asChild>
+                        <S.CloseModal>Fechar</S.CloseModal>
+                      </Dialog.Close>
+                    </S.Modal>
+                </Dialog.Portal>
+              </Dialog.Root>
+
+            <Dialog.Root>
+                <S.Trigger>
+                  <S.ButtonPerson/>
+                </S.Trigger>
+                  <Dialog.Portal>
+                    <S.bgModal />
+                    <S.Modal>
+                      <S.TitleModal>Acesso Negado!</S.TitleModal>
+                      <S.DescriptionModal>
+                        É necessário fazer o Login antes de acessar seu perfil.
+                      </S.DescriptionModal>
+                      <Dialog.Close asChild>
+                        <S.CloseModal>Fechar</S.CloseModal>
+                      </Dialog.Close>
+                    </S.Modal>
+                  </Dialog.Portal>
+            </Dialog.Root>
+
           </S.WrapperButtons>
         </S.header>
 
