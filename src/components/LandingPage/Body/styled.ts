@@ -9,7 +9,7 @@ export const Styles = {
     flex-direction: column;
     width: 100vw;
     align-items: center;
-    padding-top: 200px;
+    padding-top: 30em;
     padding-bottom: 170px;
     `,
 

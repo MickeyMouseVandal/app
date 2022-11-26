@@ -6,7 +6,7 @@ import Footer from '../Footer';
 import axios from 'axios'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as Dialog from '@radix-ui/react-dialog'; 
+import * as Dialog from '@radix-ui/react-dialog';
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -24,11 +24,10 @@ export default function SignUp() {
 
     if(account.password !== account.confirmPassword) return;
 
-    axios.post('/sign-up', {
+    axios.post('http://localhost:3000/sign-up', {
       name: account.name,
       email: account.email,
       password: account.password,
-      confirmPassword: account.confirmPassword,
     })
     .then(response => {
         return navigate('/signIn');

@@ -18,7 +18,7 @@ export default function Header(props: IHeader){
                 <Link to={props.url}>
                     {props.white ? <S.cartIconWhite /> : <S.cartIcon />}
                 </Link>
-                <Link to={props.url}>
+                <Link to="/signUp">
                     {props.white ? <S.profileIconWhite /> : <S.profileIcon />}
                 </Link>
             </S.IconsDiv>

@@ -16,6 +16,7 @@ export const Styles = {
 
     Container : styled.div`
     display: flex;
+    width: 100vw;
     padding-top: 5rem;
     gap: 7rem;
     height: 90vh;
@@ -23,21 +24,22 @@ export const Styles = {
 
     PaymentDiv : styled.div `
     display: flex;
-    padding-left: 10rem;
-    padding-bottom: 10rem;
+    width: 60em;
+    padding-left: 17em;
+    padding-bottom: 10em;
     align-items: center;
     justify-content: center;
     `,
 
     ItemsDiv : styled.div`
     display: flex;
-    padding-right: 5rem;
+    padding-right: 15rem;
     padding-left: 5rem;
     padding-top: 5rem;
     margin-bottom: 5rem;
     flex-direction: column;
     gap: 4rem;
-    width: 40rem;
+    width: 70em;
     border-right: 1px solid black;
     `,
 
@@ -79,8 +81,8 @@ export const Styles = {
     `,
 
     PayButton : styled.span`
-    width: 200px;
-    height: 40px;
+    width: 10em;
+    height: 3em;
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -89,6 +91,7 @@ export const Styles = {
     color: white;
     border-radius: 8px;
     background-color: #FFB03A;
+    font-size: 16px;
 
     :hover {
         color: #FFB03A;
