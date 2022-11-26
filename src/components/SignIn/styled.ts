@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import * as Dialog from '@radix-ui/react-dialog';
 
 export const header = styled.div`
   display: flex;
@@ -159,4 +160,58 @@ export const SignUp = styled.a`
   outline: none;
   text-decoration: none;
   cursor: pointer;
+`
+
+export const bgModal = styled(Dialog.Overlay)`
+  background-color: black;
+  opacity: 0.6;
+  position: fixed;
+  inset: 0;
+`
+
+export const Modal = styled(Dialog.Content)`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 32rem;
+  height: max-content;
+  background-color: #FFB03A;
+  color: #0D0D0D;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 5rem 5rem;
+`
+
+export const TitleModal = styled(Dialog.Title)`
+  color: black;
+  font-size: 2rem;
+`
+
+export const DescriptionModal = styled(Dialog.Description)`
+  color: #252525;
+  font-size: 1.5rem;
+`
+
+export const Trigger = styled(Dialog.Trigger)`
+  background-color: transparent;
+`
+
+export const CloseModal = styled.button`
+  background-color: #0D0D0D;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  color: white;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `
