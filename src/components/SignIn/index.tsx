@@ -26,7 +26,24 @@ export default function SignIn() {
       password: account.password,
     })
     .then(response => {
+      if(response.data.code === 200) {
         return navigate('/')
+      }
+      else {
+        return(
+          <Dialog.Root>
+            <Dialog.Portal>
+              <S.bgModal />
+                <S.Modal>
+                  <S.TitleModal>Email ou Senha Inválidos!</S.TitleModal>
+                  <Dialog.Close asChild>
+                    <S.CloseModal>Fechar</S.CloseModal>
+                  </Dialog.Close>
+                </S.Modal>
+            </Dialog.Portal>
+          </Dialog.Root>
+        );
+      }
     })
   }
 

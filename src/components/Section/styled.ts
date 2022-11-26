@@ -6,7 +6,6 @@ export const Container = styled.div<{ background?: string, size?: string }>`
     height: 100vh;
     background: ${props => props.background};
     background-repeat: no-repeat;
-    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
