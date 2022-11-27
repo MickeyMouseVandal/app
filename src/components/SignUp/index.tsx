@@ -3,10 +3,9 @@ import * as S from './styled';
 import Section from '../Section';
 import Footer from '../Footer';
 
-import axios from 'axios'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as Dialog from '@radix-ui/react-dialog'; 
+import * as Dialog from '@radix-ui/react-dialog';
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -19,21 +18,20 @@ export default function SignUp() {
     }
   )
 
-  const sendData = function(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    e.preventDefault();
+  // const sendData = function(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  //   e.preventDefault();
 
-    if(account.password !== account.confirmPassword) return;
+  //   if(account.password !== account.confirmPassword) return;
 
-    axios.post('/sign-up', {
-      name: account.name,
-      email: account.email,
-      password: account.password,
-      confirmPassword: account.confirmPassword,
-    })
-    .then(response => {
-        return navigate('/signIn');
-    })
-  }
+  //   axios.post('http://localhost:3000/sign-up', {
+  //     name: account.name,
+  //     email: account.email,
+  //     password: account.password,
+  //   })
+  //   .then(response => {
+  //       return navigate('/signIn');
+  //   })
+  // }
 
   return(
     <>
@@ -106,7 +104,7 @@ export default function SignUp() {
               <S.Label>Confirme sua senha</S.Label>
               <S.InputPassword value={account.confirmPassword} placeholder='••••••••' onChange={e => setAccount({ ...account, confirmPassword: e.target.value })} />
             </S.FormGroupItems>
-            <S.ButtonConfirm onClick={e => sendData(e)}>Confirmar</S.ButtonConfirm>
+            <S.ButtonConfirm onClick={() => navigate('/signIn')}>Confirmar</S.ButtonConfirm>
             <S.DontHaveAccount>
               Já tem uma conta?
               <S.SignUp href="/signIn">

@@ -3,7 +3,6 @@ import * as S from './styled';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Dialog from '@radix-ui/react-dialog';
-import axios from 'axios';
 
 import Section from '../Section';
 import Footer from '../Footer';
@@ -16,36 +15,6 @@ export default function SignIn() {
       password: "",
     }
   )
-
-  const sendData = function(e : React.MouseEvent<HTMLButtonElement, MouseEvent>){
-
-    e.preventDefault()
-
-    axios.post('/sign-in', {
-      email: account.email,
-      password: account.password,
-    })
-    .then(response => {
-      if(response.data.code === 200) {
-        return navigate('/')
-      }
-      else {
-        return(
-          <Dialog.Root>
-            <Dialog.Portal>
-              <S.bgModal />
-                <S.Modal>
-                  <S.TitleModal>Email ou Senha Inválidos!</S.TitleModal>
-                  <Dialog.Close asChild>
-                    <S.CloseModal>Fechar</S.CloseModal>
-                  </Dialog.Close>
-                </S.Modal>
-            </Dialog.Portal>
-          </Dialog.Root>
-        );
-      }
-    })
-  }
 
   return(
     <>
@@ -112,10 +81,10 @@ export default function SignIn() {
               <S.Label>Senha</S.Label>
               <S.InputPassword value={account.password} placeholder='••••••••' onChange={e => setAccount({ ...account, password: e.target.value })} />
             </S.FormGroupItems>
-            <S.ButtonConfirm onClick={e => sendData(e)} >Confirmar</S.ButtonConfirm>
+            <S.ButtonConfirm onClick={() => navigate('/LandingPage')} >Confirmar</S.ButtonConfirm>
             <S.DontHaveAccount>
               Não tem uma conta?
-              <S.SignUp href="/signUp">
+              <S.SignUp href="/">
                 Cadastre-se
               </S.SignUp>
             </S.DontHaveAccount>

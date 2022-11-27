@@ -16,11 +16,11 @@ function App() {
       <Router>
         <Routes>
             <Route path="/signIn" element={<SignIn />}/>
-            <Route path="/signUp" element={<SignUp />}/>
+            <Route path="/" element={<SignUp />}/>
             <Route path='/products/:id' element={<ProductView/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/cart/done' element={<ShopDone/>}/>
-            <Route path='/*' element={<LandingPage/>}/>
+            <Route path='/LandingPage' element={<LandingPage/>}/>
         </Routes>
       </Router>
     </>

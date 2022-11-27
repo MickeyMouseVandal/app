@@ -15,7 +15,7 @@ export default function HeaderLandingPage(){
         <S.MoreDiv>
          <S.LargeText>Novos itens chegaram!</S.LargeText>
          <S.TextMoreDiv>Renove seu estilo com nossos itens renovadores e reluzentes.</S.TextMoreDiv>
-         <S.MoreButton href="#items">Veja mais!</S.MoreButton>
+         <S.MoreButton>Veja mais!</S.MoreButton>
         </S.MoreDiv>
         </S.Aligner>
      </S.GradientDiv>

@@ -4,7 +4,7 @@ export const Styles = {
 
     GradientDiv : styled.div`
     width: 100%;
-    height: 753px;
+    height: 100em;
     background-color:  #0D0D0D;
 `,
 
@@ -34,7 +34,7 @@ export const Styles = {
     position: absolute;
     background-color: #080808;
     width: 70vw;
-    height: 22rem;
+    height: 26rem;
     margin-inline: 13.5rem;
     padding: 4rem;
     border-radius: 10px;
@@ -63,15 +63,16 @@ export const Styles = {
     color: white;
     `,
 
-    MoreButton : styled.a`
+    MoreButton : styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #FFB03A;
     text-decoration: none;
     color: white;
-    width: 10rem;
-    height: 3rem;
+    font-size: 16px;
+    width: 10em;
+    height: 7em;
     border-radius: 32px;
     font-family: 'Work Sans';
     z-index: 3;

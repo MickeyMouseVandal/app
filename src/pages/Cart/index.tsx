@@ -13,8 +13,9 @@ export default function Cart(){
         <>
         <S.Wrapper>
         <Header url="/cart"/>
+        {cart.length > 0 ?
         <S.Container>
-        <S.ItemsDiv>
+              <S.ItemsDiv>
             {cart.map(item => (
                 <S.ItemDiv key={item.id}>
                     <S.ItemImg src={item.thumb}/>
@@ -24,14 +25,22 @@ export default function Cart(){
                     </S.ItemDescription>
                 </S.ItemDiv>
             ))}
-          
-        </S.ItemsDiv>
+        </S.ItemsDiv> 
         <S.PaymentDiv>
             <Link to="/cart/done">
                 <S.PayButton>Pagar</S.PayButton>
             </Link>
         </S.PaymentDiv>
         </S.Container>
+        : 
+        <S.NothingToShowDiv>
+            <S.ItemName>
+                Você ainda não adicionou nenhum item no carrinho
+            </S.ItemName>
+        </S.NothingToShowDiv> }
+       
+       
+       
         <Footer/>
         </S.Wrapper>
         </>

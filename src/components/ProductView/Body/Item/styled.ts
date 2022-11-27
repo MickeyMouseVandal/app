@@ -51,7 +51,7 @@ export const Styles = {
     height: 10rem;
     `,
 
-    AddToCartButton : styled.a`
+    AddToCartButton : styled.button`
     padding: 8px 24px;
     width: 257px;
     height: 39px;
@@ -70,6 +70,7 @@ export const Styles = {
     BottomDiv : styled.div`
     padding-inline: 5rem;
     padding-block: 5rem;
+    height: 40em;
     display: flex;
     gap: 4rem;
     flex-direction: column;
