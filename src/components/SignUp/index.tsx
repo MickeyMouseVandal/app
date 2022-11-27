@@ -16,22 +16,24 @@ export default function SignUp() {
       password: "",
       confirmPassword: "",
     }
-  )
+    )
 
-  // const sendData = function(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-  //   e.preventDefault();
+    const sendData = function(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+      e.preventDefault();
+  
+      if(account.password !== account.confirmPassword) {
+        return alert('As senhas precisão ser iguais!');
+      };
+  
+      if(account.name && account.email && account.password && account.confirmPassword === '') {
+        return alert('É necessário informar todos os dados!');
+      }
 
-  //   if(account.password !== account.confirmPassword) return;
+      localStorage.setItem('users', JSON.stringify(account));
 
-  //   axios.post('http://localhost:3000/sign-up', {
-  //     name: account.name,
-  //     email: account.email,
-  //     password: account.password,
-  //   })
-  //   .then(response => {
-  //       return navigate('/signIn');
-  //   })
-  // }
+      return navigate('/signIn');
+    }
+
 
   return(
     <>
@@ -94,7 +96,7 @@ export default function SignUp() {
             </S.FormGroupItems>
             <S.FormGroupItems>
               <S.Label>E-mail</S.Label>
-              <S.Input value={account.email} placeholder='Insira seu e-mail' onChange={e => setAccount({ ...account, email: e.target.value })} />
+              <S.Input value={account.email} type="email" placeholder='Insira seu e-mail' onChange={e => setAccount({ ...account, email: e.target.value })} />
             </S.FormGroupItems>
             <S.FormGroupItems>
               <S.Label>Senha</S.Label>
@@ -104,7 +106,7 @@ export default function SignUp() {
               <S.Label>Confirme sua senha</S.Label>
               <S.InputPassword value={account.confirmPassword} placeholder='••••••••' onChange={e => setAccount({ ...account, confirmPassword: e.target.value })} />
             </S.FormGroupItems>
-            <S.ButtonConfirm onClick={() => navigate('/signIn')}>Confirmar</S.ButtonConfirm>
+            <S.ButtonConfirm onClick={(e) => sendData(e)}>Confirmar</S.ButtonConfirm>
             <S.DontHaveAccount>
               Já tem uma conta?
               <S.SignUp href="/signIn">
