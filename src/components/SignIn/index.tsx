@@ -1,6 +1,6 @@
 import * as S from './styled';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Dialog from '@radix-ui/react-dialog';
 
@@ -15,6 +15,16 @@ export default function SignIn() {
       password: "",
     }
   )
+
+  const sendData = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const user = localStorage.getItem("users");
+
+    if(user === account.email && user === account.password) {
+      alert('Email ou Senha não correspondem!')
+    }
+    
+    return navigate('/LandingPage')
+  }
 
   return(
     <>
@@ -75,13 +85,13 @@ export default function SignIn() {
           <S.Form>
             <S.FormGroupItems>
               <S.Label>E-mail</S.Label>
-              <S.Input value={account.email} placeholder='debra.holt@example.com' onChange={e => setAccount({ ...account, email: e.target.value })} />
+              <S.Input value={account.email} type="email" placeholder='debra.holt@example.com' onChange={e => setAccount({ ...account, email: e.target.value })} />
             </S.FormGroupItems>
             <S.FormGroupItems>
               <S.Label>Senha</S.Label>
               <S.InputPassword value={account.password} placeholder='••••••••' onChange={e => setAccount({ ...account, password: e.target.value })} />
             </S.FormGroupItems>
-            <S.ButtonConfirm onClick={() => navigate('/LandingPage')} >Confirmar</S.ButtonConfirm>
+            <S.ButtonConfirm onClick={(e) => sendData(e)} >Confirmar</S.ButtonConfirm>
             <S.DontHaveAccount>
               Não tem uma conta?
               <S.SignUp href="/">
